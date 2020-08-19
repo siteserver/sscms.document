@@ -1,0 +1,157 @@
+{
+  "name": "document",
+  "displayName": "在线文档插件",
+  "description": "SSCMS 在线文档插件",
+  "version": "1.0.0",
+  "license": "GPL-3.0",
+  "publisher": "sscms",
+  "engines": {
+    "sscms": "^7.0.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "repository": "https://github.com/siteserver/SS.Docs",
+  "homepage": "https://github.com/siteserver/SS.Docsxxx",
+  "icon": "/ss-admin/document/logo.svg",
+  "main": "SSCMS.Document.dll",
+  "extensions": {
+    "siteTypes": {
+      "document": {
+        "text": "文档"
+      }
+    },
+    "permissions": {
+      "document_edit": {
+        "text": "编辑文档",
+        "type": ["document"],
+        "order": 2
+      },
+      "document_nav": {
+        "text": "导航栏管理",
+        "type": ["document"],
+        "order": 3
+      },
+      "document_sidebar": {
+        "text": "侧边栏管理",
+        "type": ["document"],
+        "order": 4
+      },
+      "document_files": {
+        "text": "文件管理",
+        "type": ["document"],
+        "order": 5
+      },
+      "document_themes": {
+        "text": "主题管理",
+        "type": ["document"],
+        "order": 6
+      },
+      "document_settings_basic": {
+        "text": "基础设置",
+        "type": ["document"],
+        "order": 5
+      },
+      "document_settings_search": {
+        "text": "搜索设置",
+        "type": ["document"],
+        "order": 6
+      },
+      "document_settings_language": {
+        "text": "多语言支持",
+        "type": ["document"],
+        "order": 7
+      },
+      "document_publish": {
+        "text": "发布管理",
+        "type": ["document"],
+        "order": 8
+      }
+    },
+    "menus": {
+      "document_contents_all": {
+        "text": "文档管理",
+        "type": ["document"],
+        "permissions": [
+          "document_edit",
+          "document_channels",
+          "document_files"
+        ],
+        "iconClass": "ion-compose",
+        "order": 1,
+        "menus": {
+          "document_edit": {
+            "text": "编辑文档",
+            "link": "/ss-admin/document/edit/",
+            "permissions": ["document_edit"],
+            "order": 1
+          },
+          "document_nav": {
+            "text": "导航栏管理",
+            "link": "/ss-admin/document/nav/",
+            "permissions": ["document_nav"],
+            "order": 2
+          },
+          "document_sidebar": {
+            "text": "侧边栏管理",
+            "link": "/ss-admin/document/sidebar/",
+            "permissions": ["document_sidebar"],
+            "order": 3
+          },
+          "document_files": {
+            "text": "文件管理",
+            "link": "/ss-admin/document/files/",
+            "permissions": ["document_files"],
+            "order": 4
+          }
+        }
+      },
+      "document_themes_all": {
+        "text": "主题管理",
+        "type": ["document"],
+        "link": "/ss-admin/document/themes/",
+        "permissions": ["document_themes"],
+        "iconClass": "ion-tshirt-outline",
+        "order": 2
+      },
+      "document_settings_all": {
+        "text": "设置管理",
+        "type": ["document"],
+        "permissions": [
+          "document_settings_basic",
+          "document_settings_language"
+        ],
+        "iconClass": "ion-wrench",
+        "order": 3,
+        "menus": {
+          "document_settings_basic": {
+            "text": "基础设置",
+            "link": "/ss-admin/document/settingsBasic/",
+            "permissions": ["document_settings_basic"],
+            "order": 1
+          },
+          "document_settings_search": {
+            "text": "搜索设置",
+            "link": "/ss-admin/document/settingsSearch/",
+            "permissions": ["document_settings_search"],
+            "order": 2
+          },
+          "document_settings_language": {
+            "text": "多语言支持",
+            "link": "/ss-admin/document/settingsLanguage/",
+            "permissions": ["document_settings_language"],
+            "order": 3
+          }
+        }
+      },
+      "document_publish": {
+        "text": "发布管理",
+        "type": ["document"],
+        "link": "/ss-admin/document/publish/",
+        "permissions": ["document_publish"],
+        "iconClass": "ion-wand",
+        "order": 4
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+@page
+@{ Layout = "_Layout"; }
+
+<el-table
+  :data="locales"
+  style="width: 100%">
+  <el-table-column prop="path" label="访问路径" width="150"></el-table-column>
+  <el-table-column prop="lang" label="文档语言" width="150"></el-table-column>
+  <el-table-column prop="title" label="文档标题"></el-table-column>
+  <el-table-column prop="description" label="文档简介"></el-table-column>
+  <el-table-column
+    fixed="right"
+    width="190"
+    align="center"
+    show-overflow-tooltip
+    label="操作">
+    <template slot-scope="scope">
+      <el-link :underline="false" style="margin-right: 5px;" type="primary" v-on:click="btnEditClick(scope.row)">
+        编 辑
+      </el-link>
+      <el-link :underline="false" style="margin-right: 5px;" type="primary" v-on:click="btnDeleteClick(scope.row)">
+        删 除
+      </el-link>
+    </template>
+  </el-table-column>
+</el-table>
+
+<el-row>
+  <el-divider></el-divider>
+  <div style="height: 10px"></div>
+  <el-button size="mini" plain type="primary" style="margin-left: 0px;" icon="el-icon-plus" v-on:click="btnAddClick">
+    添加文档语言
+  </el-button>
+</el-row>
+
+<el-drawer
+  v-if="form"
+  id="form"
+  :title="form.path ? '修改文档语言' : '添加文档语言'"
+  ref="panel"
+  :visible.sync="panel"
+  destroy-on-close
+  direction="rtl"
+  size="70%">
+  <div class="drawer__content">
+    <el-form ref="form" :model="form" size="small" label-width="120px">
+      <el-form-item label="访问路径" prop="path" :rules="{ required: true, message: '请输入访问路径' }">
+        <el-input v-model="form.path"></el-input>
+      </el-form-item>
+      <el-form-item label="文档语言" prop="lang" :rules="{ required: true, message: '请选择文档语言' }">
+        <el-select v-model="form.lang" placeholder="请选择文档语言">
+          <el-option v-for="lang in langs" :key="lang.locale" :label="lang.title + ' - ' + lang.text" :value="lang.locale"></el-option>
+        </el-select>
+        <div class="tips">
+          文档语言将会被设置为页面 <html> 的 lang 属性
+        </div>
+      </el-form-item>
+      <el-form-item label="文档标题" prop="title" :rules="{ required: true, message: '请输入文档标题' }">
+        <el-input v-model="form.title"></el-input>
+      </el-form-item>
+      <el-form-item label="文档简介" prop="description">
+        <el-input type="textarea" v-model="form.description"></el-input>
+      </el-form-item>
+
+      <el-divider></el-divider>
+      <div class="drawer__footer">
+        <el-button type="primary" v-on:click="btnSubmitClick" size="small">确 定</el-button>
+        <el-button size="small" v-on:click="btnCancelClick">取 消</el-button>
+      </div>
+    </el-form>
+  </div>
+</el-drawer>
+
+@section Scripts{
+<script src="../settingsLanguage.js" type="text/javascript"></script> }
