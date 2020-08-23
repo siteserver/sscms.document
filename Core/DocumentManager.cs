@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using SSCMS.Document.Abstractions;
 using SSCMS.Document.Models;
+using SSCMS.Plugins;
 using SSCMS.Repositories;
 using SSCMS.Services;
 
