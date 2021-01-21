@@ -59,7 +59,7 @@ var methods = {
         //   $this.allTemplates = $this.templates = res.templates;
       })
       .catch(function (error) {
-        utils.error($this, error);
+        utils.error(error);
       })
       .then(function () {
         utils.loading($this, false);
@@ -87,7 +87,7 @@ var methods = {
         });
       })
       .catch(function (error) {
-        utils.error($this, error);
+        utils.error(error);
       })
       .then(function () {
         utils.loading($this, false);
@@ -117,7 +117,7 @@ var methods = {
         });
       })
       .catch(function (error) {
-        utils.error($this, error);
+        utils.error(error);
       })
       .then(function () {
         utils.loading($this, false);
@@ -235,7 +235,7 @@ var methods = {
         });
       })
       .catch(function (error) {
-        utils.error($this, error);
+        utils.error(error);
       })
       .then(function () {
         utils.loading($this, false);
@@ -257,7 +257,7 @@ var methods = {
         parent.$vue.openPageCreateStatus();
       })
       .catch(function (error) {
-        utils.error($this, error);
+        utils.error(error);
       })
       .then(function () {
         utils.loading($this, false);

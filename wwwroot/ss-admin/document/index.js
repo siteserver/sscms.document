@@ -19,7 +19,7 @@ var methods = {
       $this.form.isDocsDisabled = res.isDocsDisabled;
       $this.form.isDocsCountByDay = res.isDocsCountByDay;
     }).catch(function (error) {
-      utils.error($this, error);
+      utils.error(error);
     }).then(function () {
       utils.loading($this, false);
     });
@@ -32,7 +32,7 @@ var methods = {
     $api.post($url + '/' + this.siteId, this.form).then(function (response) {
       $this.$message.success('设置保存成功');
     }).catch(function (error) {
-      utils.error($this, error);
+      utils.error(error);
     }).then(function () {
       utils.loading($this, false);
     });

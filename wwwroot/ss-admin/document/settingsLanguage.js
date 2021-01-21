@@ -376,7 +376,7 @@ var methods = {
         // $this.locales = res.locales;
       })
       .catch(function (error) {
-        utils.error($this, error);
+        utils.error(error);
       })
       .then(function () {
         utils.loading($this, false);
@@ -399,7 +399,7 @@ var methods = {
         $this.locales = res.locales;
       })
       .catch(function (error) {
-        utils.error($this, error);
+        utils.error(error);
       })
       .then(function () {
         utils.loading($this, false);
@@ -422,7 +422,7 @@ var methods = {
         $this.panel = false;
       })
       .catch(function (error) {
-        utils.error($this, error);
+        utils.error(error);
       })
       .then(function () {
         utils.loading($this, false);
