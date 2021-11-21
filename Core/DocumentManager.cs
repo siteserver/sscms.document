@@ -18,12 +18,12 @@ namespace SSCMS.Document.Core
 
         public async Task<Settings> GetSettingsAsync(int siteId)
         {
-            return await _pluginConfigRepository.GetConfigAsync<Settings>(PluginId, siteId) ?? new Settings();
+            return await _pluginConfigRepository.GetAsync<Settings>(PluginId, siteId, nameof(DocumentManager)) ?? new Settings();
         }
 
         public async Task<bool> SetSettingsAsync(int siteId, Settings settings)
         {
-            return await _pluginConfigRepository.SetConfigAsync(PluginId, siteId, settings);
+            return await _pluginConfigRepository.SetAsync(PluginId, siteId, nameof(DocumentManager), settings);
         }
     }
 }
